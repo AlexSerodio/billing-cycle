@@ -1,0 +1,5 @@
+Fontes/frontend/node_modules
+Fontes/frontend/*.log
+Fontes/backend/node_modules
+Fontes/backend/*.log
+Fontes/backend/.env
