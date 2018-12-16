@@ -18,9 +18,10 @@ class AuthOrApp extends Component {
 
     render() {
         const { user, validToken } = this.props.auth
+
         if (user && validToken) {
             axios.defaults.headers.common['authorization'] = user.token
-            return <App>{this.props.children}</App>
+            return <App>{ this.props.children }</App>
         } else if (!user && !validToken) {
             return <Auth />
         } else {
@@ -30,6 +31,5 @@ class AuthOrApp extends Component {
 }
 
 const mapStateToProps = state => ({ auth: state.auth })
-const mapDispatchToProps = dispatch => bindActionCreators({ validateToken },
-    dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ validateToken }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(AuthOrApp)
